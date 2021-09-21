@@ -7,6 +7,6 @@ namespace ConsumingAPIXamarin.Services
 {
     public interface IAlertService
     {
-        Task DisplayAlertAsync(string title, string description);
+        Task DisplayAlertAync(string title, string description);
     }
 }
