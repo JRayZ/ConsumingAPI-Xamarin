@@ -35,15 +35,15 @@ namespace ConsumingAPIXamarin.ViewModels
             IsBusy = true;
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
-                if(information.ActId == "INMORTAL")
+                if(information.ActId == "RADIANT")
                 {
-                    information.ActId = "I";
+                    information.ActId = "";
                 }
                 Ranking = await _rankingApiService.GetRankingAync(information.ActId);
             }
             else
             {
-                await _alertService.DisplayAlertAync("No internet connection", "No internet connection detected");
+                await _alertService.DisplayAlertAsync("No internet connection", "No internet connection detected");
             }
 
             IsBusy = false;
