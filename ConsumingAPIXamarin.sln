@@ -7,7 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsumingAPIXamarin.Android
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsumingAPIXamarin.iOS", "ConsumingAPIXamarin\ConsumingAPIXamarin.iOS\ConsumingAPIXamarin.iOS.csproj", "{C2083CF8-45A3-45BF-AECF-823D0EF636A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsumingAPIXamarin", "ConsumingAPIXamarin\ConsumingAPIXamarin\ConsumingAPIXamarin.csproj", "{C90DFD7E-48CC-4A04-B1AD-5A7EA8D73487}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsumingAPIXamarin", "ConsumingAPIXamarin\ConsumingAPIXamarin\ConsumingAPIXamarin.csproj", "{C90DFD7E-48CC-4A04-B1AD-5A7EA8D73487}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{248BFA3A-FABC-4B26-8C20-34A22C4065E7}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

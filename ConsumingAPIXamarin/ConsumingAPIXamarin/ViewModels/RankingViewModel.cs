@@ -14,40 +14,38 @@ namespace ConsumingAPIXamarin.ViewModels
 {
     class RankingViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<Ranking> Ranking { get; set; }
-        public RankingInformation rankingInformation { get; set; }
+        public RankingInformation Ranking { get; set; }
+        public RankingInformation rankinginformation { get; set; }
         IRankingAPIService _rankingApiService { get; }
         IAlertService _alertService { get; }
         public bool IsBusy { get; set; }
         public ICommand GetCommand { get; }
         public bool IsNotBusy => !IsBusy;
+        //const string ActId;
 
         public RankingViewModel(IRankingAPIService rankingAPIService, IAlertService alertService)
         {
             _rankingApiService = rankingAPIService;
             _alertService = alertService;
-            rankingInformation = new RankingInformation();
-            GetCommand = new Command<RankingInformation>(LoadRanking);
+            rankinginformation = new RankingInformation();
+            //GetCommand = new Command<RankingInformation>(LoadRanking);
         }
 
-        public async void LoadRanking(RankingInformation information)
-        {
-            IsBusy = true;
-            if (Connectivity.NetworkAccess == NetworkAccess.Internet)
-            {
-                if(information.ActId == "RADIANT")
-                {
-                    information.ActId = "";
-                }
-                Ranking = await _rankingApiService.GetRankingAync(information.ActId);
-            }
-            else
-            {
-                await _alertService.DisplayAlertAsync("No internet connection", "No internet connection detected");
-            }
+        //public async void LoadRanking(RankingInformation information)
+        //{
+            //IsBusy = true;
+            //if (Connectivity.NetworkAccess == NetworkAccess.Internet)
+            //{
 
-            IsBusy = false;
-        }
+                //Ranking = await _rankingApiService.GetRankingAync();
+            //}
+            //else
+            //{
+                //await _alertService.DisplayAlertAsync("No internet connection", "No internet connection detected");
+            //}
+
+            //IsBusy = false;
+        //}
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }

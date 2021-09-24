@@ -12,6 +12,6 @@ namespace ConsumingAPIXamarin.Services
     public interface IRankingAPI
     {
         [Get("/{actId}?size=20&api_key={key}")]
-        Task<HttpResponseMessage> GetRankingAync(string actid, string key);
+        Task<HttpResponseMessage> GetRankingAync(string Players, string key);
     }
 }
