@@ -9,6 +9,6 @@ namespace ConsumingAPIXamarin.Services
 {
     public interface IRankingAPIService
     {
-        Task<ObservableCollection<Ranking>> GetRankingAsync(string actid);
+        Task<ObservableCollection<Ranking>> GetRankingAync(string actid);
     }
 }

@@ -9,9 +9,9 @@ using ConsumingAPIXamarin.Models;
 
 namespace ConsumingAPIXamarin.Services
 {
-    class IRankingAPI
+    public interface IRankingAPI
     {
-        [Get("/{actId}?size=50&api_key={key}")]
-        Task<HttpResponseMessage> GetRankingAsync(string actid, string key);
+        [Get("/{actId}?size=20&api_key={key}")]
+        Task<HttpResponseMessage> GetRankingAync(string actid, string key);
     }
 }

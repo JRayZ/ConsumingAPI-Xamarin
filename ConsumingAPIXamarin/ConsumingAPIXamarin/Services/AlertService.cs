@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ConsumingAPIXamarin.Services
 {
-    class AlertService : IAlertService
+    public class AlertService : IAlertService
     {
         public Task DisplayAlertAsync(string title, string description)
         {

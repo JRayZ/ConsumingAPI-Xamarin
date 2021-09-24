@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using ConsumingAPIXamarin.Views;
 
 namespace ConsumingAPIXamarin
 {
@@ -10,7 +11,7 @@ namespace ConsumingAPIXamarin
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new RankingPage();
         }
 
         protected override void OnStart()
