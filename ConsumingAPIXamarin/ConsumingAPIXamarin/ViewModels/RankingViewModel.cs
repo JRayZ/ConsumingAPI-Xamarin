@@ -28,24 +28,24 @@ namespace ConsumingAPIXamarin.ViewModels
             _rankingApiService = rankingAPIService;
             _alertService = alertService;
             rankinginformation = new RankingInformation();
-            //GetCommand = new Command<RankingInformation>(LoadRanking);
+            GetCommand = new Command<RankingInformation>(LoadRanking);
         }
 
-        //public async void LoadRanking(RankingInformation information)
-        //{
-            //IsBusy = true;
-            //if (Connectivity.NetworkAccess == NetworkAccess.Internet)
-            //{
+        public async void LoadRanking(RankingInformation information)
+        {
+            IsBusy = true;
+            if (Connectivity.NetworkAccess == NetworkAccess.Internet)
+            {
 
-                //Ranking = await _rankingApiService.GetRankingAync();
-            //}
-            //else
-            //{
-                //await _alertService.DisplayAlertAsync("No internet connection", "No internet connection detected");
-            //}
+                Ranking = await _rankingApiService.GetRankingAync();
+            }
+            else
+            {
+                await _alertService.DisplayAlertAsync("No internet connection", "No internet connection detected");
+            }
 
-            //IsBusy = false;
-        //}
+            IsBusy = false;
+        }
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }

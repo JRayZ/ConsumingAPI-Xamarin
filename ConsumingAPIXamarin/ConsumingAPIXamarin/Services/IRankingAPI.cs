@@ -12,6 +12,6 @@ namespace ConsumingAPIXamarin.Services
     public interface IRankingAPI
     {
         [Get("/val/ranked/v1/leaderboards/by-act/{actId}")]
-        Task<HttpResponseMessage> GetRankingAync(string actId, string shard, long totalPlayers);
+        Task<HttpResponseMessage> GetRankingAync();
     }
 }
