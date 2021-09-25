@@ -8,6 +8,8 @@ namespace ConsumingAPIXamarin.Models
     public class RankingInformation
     {
         public string ActId { get; set; }
+        public string shard { get; set; }
+        public long totalPlayers { get; set; }
 
         [JsonPropertyName("players")]
         public List<Ranking> Players { get; set; }

@@ -11,14 +11,14 @@ namespace ConsumingAPIXamarin.Services
 {
     public class RankingAPIService : IRankingAPIService
     {
-        public const string actId = "https://na.api.riotgames.com/val/ranked/v1/leaderboards/by-act/4cb622e1-4244-6da3-7276-8daaf1c01be2?size=20&startIndex=0";
+        public const string ApiKey = Secrets.ApiKey;
         ISerializerService serializerService = new SerializerService();
 
-        public async Task<RankingInformation> GetRankingAync(string ActId)
+        public async Task<RankingInformation> GetRankingAync(string actId, string shard, long totalPlayers)
         {
             RankingInformation ranking = null;
             var refitClient = RestService.For<IRankingAPI>("https://na.api.riotgames.com/val/ranked/v1/leaderboards/by-act/4cb622e1-4244-6da3-7276-8daaf1c01be2?size=20&startIndex=0");
-            var rankingResponse = await refitClient.GetRankingAync(ActId, actId);
+            var rankingResponse = await refitClient.GetRankingAync(actId, shard, totalPlayers, ApiKey);
             if (rankingResponse.IsSuccessStatusCode)
             {
                 var jsonRanking = await rankingResponse.Content.ReadAsStringAsync();
